@@ -28,7 +28,7 @@
 WIN-VIPER 2026 PRO is a high-performance Windows 11 de-bloat utility written in pure Python. Designed for both Home and Pro editions, it streamlines your OS by removing telemetry, unnecessary background processes, and "junkware" while maintaining 100% compatibility with development tools and modern gaming APIs.
 
 > [!IMPORTANT]
-> This tool automates system-level changes. It auto-create a System Restore point before execution.
+> This tool automates system-level changes. It auto-creates a System Restore point before execution.
 
 ---
 
