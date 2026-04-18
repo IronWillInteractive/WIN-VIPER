@@ -60,7 +60,7 @@ Unlike aggressive scripts that "break" Windows Update or essential apps, WIN-VIP
 
 ---
 
- # 🌙 [Check out latest Nightly Build Releases 🛠️](https://github.com/IronWillInteractive/WIN-VIPER/releases/tag/Beta_Releases)
+ # 🌙 [Check out The Latest Nightly Build Releases 🛠️](https://github.com/IronWillInteractive/WIN-VIPER/releases/tag/Beta_Releases)
 
 ---
 
