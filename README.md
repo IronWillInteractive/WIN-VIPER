@@ -68,8 +68,9 @@ Unlike aggressive scripts that "break" Windows Update or essential apps, WIN-VIP
 
 ### 🛑 Prerequisite
 
-In Special Edge Cases Sometimes **Python 3.x** may need to be installed. During installation, ensure you check the box **"Add Python to PATH"** to allow the script to run from any directory.
+While the included Batch launcher is designed to handle the environment setup automatically, **Python 3.x** must be present on your system if you intend to run the script directly via CMD.
 
+If you need to perform a manual Python installation, ensure you check the box **"Add Python to PATH"** to allow the engine to execute correctly from any directory.
 ### Method A: The Simple Way (Recommended)
 
 Simply **Double-Click** the batch launcher in the root directory. The engine will automatically handle environment checks, folder navigation, and UAC elevation.
