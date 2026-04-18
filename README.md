@@ -68,7 +68,7 @@ Unlike aggressive scripts that "break" Windows Update or essential apps, WIN-VIP
 
 ### 🛑 Prerequisite
 
-**Python 3.x** must be installed. During installation, ensure you check the box **"Add Python to PATH"** to allow the script to run from any directory.
+In Special Edge Cases Sometimes **Python 3.x** may need to be installed. During installation, ensure you check the box **"Add Python to PATH"** to allow the script to run from any directory.
 
 ### Method A: The Simple Way (Recommended)
 
