@@ -63,13 +63,21 @@ Unlike aggressive scripts that "break" Windows Update or essential apps, WIN-VIP
 ## 🚀 Installation & Usage
 
 ### 🛑 Prerequisite
-Python 3.x must be installed on your system.
+**Python 3.x** must be installed. During installation, ensure you check the box **"Add Python to PATH"** to allow the script to run from any directory.
 
 ### Method A: The Simple Way (Recommended)
-Simply Double-Click the script file. The engine will automatically detect your permissions and prompt for Admin access.
-> `Winscorch2026-Pro.py`
+Simply **Double-Click** the batch launcher in the root directory. The engine will automatically handle environment checks, folder navigation, and UAC elevation.
+> `Launch_Viper.bat`
+
+---
 
 ### Method B: Manual Execution via Terminal
-Open PowerShell or Command Prompt as Administrator and run:
+For users who prefer the command line or need to debug, follow these steps:
+
+1. **Navigate** to the project sub-folder: `WIN-VIPER_Pro\Main`
+2. **Open the Terminal:** Click into the Windows File Explorer **Address Bar** (highlighted below).
+   <img width="328" height="67" alt="Address Bar Example" src="https://github.com/user-attachments/assets/e00b32be-3534-4c3e-a29f-21cc5901a186" />
+3. **Launch CMD:** Clear the path text, type `cmd`, and press **Enter**. This opens a Command Prompt window already set to the correct directory.
+4. **Execute:** Run the following command:
 ```powershell
-python Winscorch2026-Pro.py
+python WinViper_Pro.py
