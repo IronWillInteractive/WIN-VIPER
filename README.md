@@ -46,7 +46,7 @@
 
 **WIN-VIPER 2026 PRO** is a Windows 11 optimization and de-bloat utility packaged as a native Windows executable.
 
-This patched build is set up so the root launcher correctly runs the real packaged EXE located inside the `Main` folder. No Python command is required to start the app from this package.
+This build is set up so the root launcher runs the pre-packaged Native EXE located inside the `Main` folder. No Python command is required to start the app from this package anymore.
 
 > [!IMPORTANT]
 > This tool performs system-level optimization actions. Create a Windows System Restore point before using any de-bloat, cleanup, or optimization tool.
