@@ -32,14 +32,13 @@
 ## 📋 Table of Contents
 
 1. [Overview](#-overview)
-2. [What Was Patched](#-what-was-patched)
-3. [Folder Layout](#-folder-layout)
-4. [How To Run](#-how-to-run)
-5. [Safety Notes](#-safety-notes)
-6. [Key Features](#-key-features)
-7. [System Requirements](#-system-requirements)
-8. [Project Metadata](#-project-metadata)
-9. [Credits](#-credits)
+2. [Folder Layout](#-folder-layout)
+3. [How To Run](#-how-to-run)
+4. [Safety Notes](#-safety-notes)
+5. [Key Features](#-key-features)
+6. [System Requirements](#-system-requirements)
+7. [Project Metadata](#-project-metadata)
+8. [Credits](#-credits)
 
 ---
 
@@ -51,32 +50,6 @@ This patched build is set up so the root launcher correctly runs the real packag
 
 > [!IMPORTANT]
 > This tool performs system-level optimization actions. Create a Windows System Restore point before using any de-bloat, cleanup, or optimization tool.
-
----
-
-## ✅ What Was Patched
-
-The original launcher was pointing at the wrong file and tried to run the app through Python:
-
-```bat
-Main\WinViper_Pro.exe
-```
-
-The actual packaged executable is:
-
-```bat
-Main\WinViper_Pro_2026.exe
-```
-
-This patch updates `Launch_Viper.bat` so it:
-
-- launches the correct EXE;
-- checks that the `Main` folder exists;
-- checks that `WinViper_Pro_2026.exe` exists before launching;
-- requests Administrator permissions through UAC;
-- runs the EXE from its own `Main` directory;
-- reports the app exit code when it closes;
-- avoids the old broken Python startup path.
 
 ---
 
