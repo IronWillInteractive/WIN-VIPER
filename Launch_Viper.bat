@@ -1,30 +1,71 @@
 @echo off
-setlocal
-title WIN-VIPER 2026 PRO - Initialization
+setlocal EnableExtensions
 
-:: Define Paths
+:: ============================================================
+::  WIN-VIPER 2026 PRO - EXE LAUNCHER
+::  Iron Will Interactive
+:: ============================================================
+
+title WIN-VIPER 2026 PRO - Launcher
+color 0B
+
 set "ROOT_DIR=%~dp0"
 set "MAIN_DIR=%ROOT_DIR%Main"
-set "SCRIPT_PATH=%MAIN_DIR%\WinViper_Pro.py"
+set "EXE_NAME=WinViper_Pro_2026.exe"
+set "EXE_PATH=%MAIN_DIR%\%EXE_NAME%"
 
-echo Checking system environment for Python 3...
+cls
+echo.
+echo  ============================================================
+echo   WIN-VIPER 2026 PRO
+echo   Iron Will Interactive - Windows Optimization Launcher
+echo  ============================================================
+echo.
 
-:: Check if Python is installed
-python --version >nul 2>&1
-if %errorlevel% neq 0 (
-    echo [!] Python is not installed.
-    echo [!] Redirecting to download the latest stable version...
-    start https://www.python.org/downloads/
-    echo Please install Python and ensure "Add Python to PATH" is checked.
+if not exist "%MAIN_DIR%" (
+    echo [ERROR] Missing Main folder.
+    echo Expected: "%MAIN_DIR%"
+    echo.
+    echo Extract the full WIN-VIPER folder before running this launcher.
+    echo Do not run it directly from inside the ZIP preview window.
+    echo.
     pause
-    exit
+    exit /b 1
 )
 
-:: Navigate to the Main folder
-cd /d "%MAIN_DIR%"
+if not exist "%EXE_PATH%" (
+    echo [ERROR] Missing executable.
+    echo Expected: "%EXE_PATH%"
+    echo.
+    echo Make sure this file exists:
+    echo Main\%EXE_NAME%
+    echo.
+    pause
+    exit /b 1
+)
 
-:: Run the script
-echo [SUCCESS] Python detected. Launching WIN-VIPER 2026 PRO...
-python "%SCRIPT_PATH%"
+:: Detect admin rights. If not elevated, relaunch this same BAT as admin.
+net session >nul 2>&1
+if %errorlevel% neq 0 (
+    echo [INFO] Administrator permissions are recommended for WIN-VIPER.
+    echo [INFO] Requesting UAC elevation...
+    powershell -NoProfile -ExecutionPolicy Bypass -Command "Start-Process -FilePath '%~f0' -Verb RunAs"
+    exit /b
+)
 
+pushd "%MAIN_DIR%" >nul
+
+echo [OK] Running with Administrator permissions.
+echo [OK] Launching: %EXE_NAME%
+echo.
+
+start "WIN-VIPER 2026 PRO" /wait "%EXE_PATH%"
+set "APP_EXIT=%ERRORLEVEL%"
+
+popd >nul
+
+echo.
+echo [DONE] WIN-VIPER closed with exit code: %APP_EXIT%
+echo.
 pause
+exit /b %APP_EXIT%
